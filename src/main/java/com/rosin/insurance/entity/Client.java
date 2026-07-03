@@ -25,8 +25,14 @@ public class Client {
     @Column(updatable = false, nullable=false)
     private UUID id;
 
-    @Column(name="full_name",nullable = false)
-    private String fullName;
+    @Column(name="first_name",nullable = false)
+    private String firstName;
+
+    @Column(name="second_name")
+    private String secondName;
+
+    @Column(name = "surname",nullable = false)
+    private String surname;
 
     @Column(name="national_id",unique = true)
     private String nationalId;
