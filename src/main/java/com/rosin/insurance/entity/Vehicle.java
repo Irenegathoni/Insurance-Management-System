@@ -10,6 +10,7 @@ import java.util.UUID;
 public class Vehicle {
 
     @Id
-    @GeneratedValue
+    
     private UUID id;
+
 }

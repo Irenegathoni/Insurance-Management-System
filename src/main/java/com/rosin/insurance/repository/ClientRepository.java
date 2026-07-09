@@ -31,6 +31,9 @@ public interface ClientRepository extends JpaRepository<Client,UUID>{
     //find the clients under the agent
     List<Client> findByAgentId(UUID agentId);
 
+    //CHECK THE CLIENT BY NATIONAL ID DURING REGISTRATION
+    boolean existsByNationalId(String nationalId);
+
 
 
 }
