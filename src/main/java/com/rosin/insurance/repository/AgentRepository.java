@@ -11,11 +11,11 @@ import java.util.UUID;
 public interface AgentRepository extends JpaRepository<Agent,UUID>{
 
     //find the agent by email,during login
-    //findby means:SELECT * FROM...WHERE
+    //findBy means:SELECT * FROM...WHERE
     Optional<Agent> findByEmail(String email);
 
     //check if the email already exists during registration
-    //existby means: SELECT..WHERE
+    //existBy means: SELECT...WHERE
     boolean existsByEmail(String email);
 
     //check if the username is already taken during registration

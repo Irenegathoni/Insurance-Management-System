@@ -20,10 +20,12 @@ public interface ClientRepository extends JpaRepository<Client,UUID>{
 
     //find the client by any name, whatever case you write, it is first lowered to the lower case(LOWER(...)LIKE LOWER(...)
     //concat('%',:name,'%') means finding that name anywhere in the value
+    //OR — if it matches ANY of the three name fields, include that client in results.
     @Query("SELECT c FROM Client c WHERE " +
             "LOWER(c.firstName) LIKE LOWER(CONCAT('%', :name, '%')) OR " +
             "LOWER(c.secondName) LIKE LOWER(CONCAT('%', :name, '%')) OR " +
             "LOWER(c.surname) LIKE LOWER(CONCAT('%', :name, '%'))")
+    //:name — this is a named parameter. @Param("name") connects it to the method argument String name.
     List<Client> searchByAnyName(@Param("name") String name);
 
     //find the clients under the agent
