@@ -25,7 +25,7 @@ public interface ClientRepository extends JpaRepository<Client,UUID>{
             "LOWER(c.firstName) LIKE LOWER(CONCAT('%', :name, '%')) OR " +
             "LOWER(c.secondName) LIKE LOWER(CONCAT('%', :name, '%')) OR " +
             "LOWER(c.surname) LIKE LOWER(CONCAT('%', :name, '%'))")
-    //:name — this is a named parameter. @Param("name") connects it to the method argument String name.
+    //name — this is a named parameter. @Param("name") connects it to the method argument String name.
     List<Client> searchByAnyName(@Param("name") String name);
 
     //find the clients under the agent

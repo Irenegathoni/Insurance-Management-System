@@ -52,7 +52,7 @@ public class ClientService {
     }
     //update the client
     public Client updateClient(UUID id,Client updatedClient){
-        //check if the client exists by id
+        //find the client by id
         Client existing= clientRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Client not found by id:"+ id));
         existing.setFirstName(updatedClient.getFirstName());
