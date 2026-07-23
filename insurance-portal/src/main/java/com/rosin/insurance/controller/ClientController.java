@@ -1,4 +1,5 @@
 package com.rosin.insurance.controller;
+import com.rosin.insurance.entity.Agent;
 import com.rosin.insurance.entity.Client;
 import com.rosin.insurance.service.ClientService;
 import lombok.RequiredArgsConstructor;
@@ -48,11 +49,15 @@ public class ClientController {
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
-    //updating a client/ 0
-
+    //updating a client/
+    @PutMapping
+    public ResponseEntity<Client> updateClient(@PathVariable UUID id, @RequestBody Client client){
+        Client updated=clientService.updateClient(id,client);
+        return ResponseEntity.ok(updated);
 
     }
 
+    //deleting a client
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClient(@PathVariable UUID id) {
         clientService.deleteClient(id);
