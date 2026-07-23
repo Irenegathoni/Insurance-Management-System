@@ -51,5 +51,8 @@ public class Client {
     @JoinColumn(name = "agent_id",nullable = false)
     private Agent agent;
 
+    @OneToMany(mappedBy ="client",fetch=FetchType.LAZY)
+    private List<Vehicle> vehicles;
+
 
 }

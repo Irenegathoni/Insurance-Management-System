@@ -48,11 +48,8 @@ public class ClientController {
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
-    //updating a client
-    @PutMapping("/{id}")
-    public ResponseEntity<Client> updateClient(@PathVariable UUID id, @RequestBody Client client) {
-        Client updated = clientService.updateClient(id, client);
-        return ResponseEntity.ok(updated);
+    //updating a client/ 0
+
 
     }
 
