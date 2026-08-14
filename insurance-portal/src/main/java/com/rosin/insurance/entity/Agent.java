@@ -44,4 +44,8 @@ public class Agent {
     @OneToMany(mappedBy = "agent",fetch = FetchType.LAZY)
     private List<Client> clients;
 
+    //relationship between agent and documents
+    @OneToMany(mappedBy ="uploadedBy",fetch = FetchType.LAZY)
+    private List<Document> documents;
+
 }

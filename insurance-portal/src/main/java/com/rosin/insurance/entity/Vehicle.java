@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UuidGenerator;
 import java.time.LocalDateTime;
 import java.util.UUID;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -40,6 +41,10 @@ public class Vehicle {
     @CreationTimestamp
     @Column(name="created_at",nullable = false,updatable = false)
     private LocalDateTime createdAt;
+
+    //relationship between vehicles and documents
+    @OneToMany(mappedBy = "vehicle",fetch = FetchType.LAZY)
+    private List <Document> documents;
 
    //relationship between vehicles and clients:many vehicles can belong to one client
     @ManyToOne(fetch = FetchType.LAZY)

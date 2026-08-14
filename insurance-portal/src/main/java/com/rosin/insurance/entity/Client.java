@@ -54,5 +54,8 @@ public class Client {
     @OneToMany(mappedBy ="client",fetch=FetchType.LAZY)
     private List<Vehicle> vehicles;
 
+    @OneToMany(mappedBy = "client",fetch = FetchType.LAZY)
+    private List<Document> documents;
+
 
 }

@@ -1,3 +1,7 @@
 spring.datasource.url=jdbc:postgresql://localhost:5432/your_db_name
 spring.datasource.username=your_username
 spring.datasource.password=your_password
+
+cloudinary.cloud-name=YOUR_CLOUD_NAME
+cloudinary.api-key=YOUR_API_KEY
+cloudinary.api-secret=YOUR_API_SECRET
