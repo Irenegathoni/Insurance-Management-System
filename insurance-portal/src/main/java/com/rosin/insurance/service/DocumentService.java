@@ -48,7 +48,14 @@ public class DocumentService {
             throw new RuntimeException("File too large .Maximum size is 5MB.");
         }
 
-    }
+
+        // find client
+        Client client = clientRepository.findById(clientId)
+                .orElseThrow(() -> new RuntimeException("Client not found by id:" + clientId));
+        //find agent
+        Agent agent = agentRepository.findById(agentId)
+                .orElseThrow(() -> new RuntimeException("Agent not found by id:" + agentId));
+
 
 
 }
